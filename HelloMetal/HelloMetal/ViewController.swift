@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     
     var device: MTLDevice!
     var metalLayer: CAMetalLayer!
+    let vertexData:[Float] = [
+        0.0, 1.0, 0.0,
+        -1.0, -1.0, 0.0,
+        1.0, -1.0, 0.0
+    ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
