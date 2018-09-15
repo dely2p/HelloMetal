@@ -62,6 +62,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func render() {
+        // TODO
+    }
     
+    func gameloop() {
+        autoreleasepool {
+            self.render()
+        }
+    }
+
 }
 
