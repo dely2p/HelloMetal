@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         1.0, -1.0, 0.0
     ]
     var vertexBuffer: MTLBuffer!
+    var pipelineState: MTLRenderPipelineState!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
