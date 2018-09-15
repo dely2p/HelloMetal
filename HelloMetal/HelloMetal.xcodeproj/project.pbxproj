@@ -99,6 +99,11 @@
 				TargetAttributes = {
 					A3D86529214C1F13004D747A = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
