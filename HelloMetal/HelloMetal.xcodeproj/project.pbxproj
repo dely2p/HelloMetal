@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3B52733214D72A200CE13A1 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B52731214D72A200CE13A1 /* Matrix4.m */; };
 		A3D8652E214C1F13004D747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8652D214C1F13004D747A /* AppDelegate.swift */; };
 		A3D86530214C1F13004D747A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8652F214C1F13004D747A /* ViewController.swift */; };
 		A3D86533214C1F13004D747A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D86531214C1F13004D747A /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3B52730214D72A100CE13A1 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3B52731214D72A200CE13A1 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		A3B52732214D72A200CE13A1 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
 		A3D8652A214C1F13004D747A /* HelloMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D8652D214C1F13004D747A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D8652F214C1F13004D747A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		A3D8652C214C1F13004D747A /* HelloMetal */ = {
 			isa = PBXGroup;
 			children = (
+				A3B52732214D72A200CE13A1 /* Matrix4.h */,
+				A3B52731214D72A200CE13A1 /* Matrix4.m */,
 				A3D8652D214C1F13004D747A /* AppDelegate.swift */,
 				A3D8652F214C1F13004D747A /* ViewController.swift */,
 				A3D8653F214CB1F9004D747A /* Shaders.metal */,
@@ -63,6 +69,7 @@
 				A3D86534214C1F13004D747A /* Assets.xcassets */,
 				A3D86536214C1F13004D747A /* LaunchScreen.storyboard */,
 				A3D86539214C1F13004D747A /* Info.plist */,
+				A3B52730214D72A100CE13A1 /* HelloMetal-Bridging-Header.h */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 				TargetAttributes = {
 					A3D86529214C1F13004D747A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -144,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D86540214CB1F9004D747A /* Shaders.metal in Sources */,
+				A3B52733214D72A200CE13A1 /* Matrix4.m in Sources */,
 				A3D86530214C1F13004D747A /* ViewController.swift in Sources */,
 				A3D8652E214C1F13004D747A /* AppDelegate.swift in Sources */,
 			);
@@ -289,6 +298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
@@ -298,6 +308,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dely.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
@@ -316,6 +329,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dely.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
