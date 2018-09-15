@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     ]
     var vertexBuffer: MTLBuffer!
     var pipelineState: MTLRenderPipelineState!
+    var commandQueue: MTLCommandQueue!
 
 
     override func viewDidLoad() {
@@ -46,6 +47,9 @@ class ViewController: UIViewController {
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         
         pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+        
+        commandQueue = device.makeCommandQueue ()
+
 
     }
 
