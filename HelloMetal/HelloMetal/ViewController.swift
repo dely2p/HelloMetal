@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var vertexBuffer: MTLBuffer!
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
+    var timer: CADisplayLink!
 
 
     override func viewDidLoad() {
@@ -49,6 +50,9 @@ class ViewController: UIViewController {
         pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
         
         commandQueue = device.makeCommandQueue ()
+        
+        timer = CADisplayLink(target: self, selector: #selector(ViewController.gameloop))
+        timer.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
 
 
     }
@@ -57,5 +61,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 }
 
