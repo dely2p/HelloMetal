@@ -62,27 +62,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func render() {
-        guard let drawable = metalLayer?.nextDrawable() else { return }
-        let renderPassDescriptor = MTLRenderPassDescriptor()
-        renderPassDescriptor.colorAttachments[0].texture = drawable.texture
-        renderPassDescriptor.colorAttachments[0].loadAction = .clear
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-        
-        guard let commandBuffer = commandQueue.makeCommandBuffer() else {
-            return
-        }
-        
-        if let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
-            renderEncoder.setRenderPipelineState(pipelineState)
-            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-            renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3, instanceCount: 1)
-            renderEncoder.endEncoding()
-        }
-        commandBuffer.present (drawable)
-        commandBuffer.commit ()
-    }
-    
     @objc func gameloop() {
         autoreleasepool {
             self.render()
