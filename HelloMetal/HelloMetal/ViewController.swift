@@ -13,12 +13,7 @@ class ViewController: UIViewController {
     
     var device: MTLDevice!
     var metalLayer: CAMetalLayer!
-    let vertexData:[Float] = [
-        0.0, 1.0, 0.0,
-        -1.0, -1.0, 0.0,
-        1.0, -1.0, 0.0
-    ]
-    var vertexBuffer: MTLBuffer!
+    var objectToDraw: Triangle!
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
     var timer: CADisplayLink!
@@ -35,8 +30,7 @@ class ViewController: UIViewController {
         metalLayer.frame = view.layer.frame
         view.layer.addSublayer(metalLayer)
         
-        let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
-        vertexBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: [])
+        objectToDraw = Triangle(device: device)
         
         let defaultLibrary = device.makeDefaultLibrary()!
         let fragmentProgram = defaultLibrary.makeFunction(name: "basic_fragment")
@@ -61,6 +55,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func render() {
+        guard let drawable = metalLayer?.nextDrawable() else { return }
+        objectToDraw.render(commandQueue: commandQueue, pipelineState: pipelineState, drawable: drawable, clearColor: nil)
+    }
+
     
     @objc func gameloop() {
         autoreleasepool {
