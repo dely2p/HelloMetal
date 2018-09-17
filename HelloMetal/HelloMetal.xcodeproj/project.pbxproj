@@ -16,6 +16,7 @@
 		A3D86540214CB1F9004D747A /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A3D8653F214CB1F9004D747A /* Shaders.metal */; };
 		A3EAB1CA2150073D008CDF28 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAB1C92150073D008CDF28 /* Vertex.swift */; };
 		A3EAB1CC21500862008CDF28 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAB1CB21500862008CDF28 /* Node.swift */; };
+		A3EAB1CE21500C01008CDF28 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EAB1CD21500C01008CDF28 /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A3D8653F214CB1F9004D747A /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		A3EAB1C92150073D008CDF28 /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		A3EAB1CB21500862008CDF28 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		A3EAB1CD21500C01008CDF28 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				A3B52730214D72A100CE13A1 /* HelloMetal-Bridging-Header.h */,
 				A3EAB1C92150073D008CDF28 /* Vertex.swift */,
 				A3EAB1CB21500862008CDF28 /* Node.swift */,
+				A3EAB1CD21500C01008CDF28 /* Triangle.swift */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				A3D86530214C1F13004D747A /* ViewController.swift in Sources */,
 				A3EAB1CC21500862008CDF28 /* Node.swift in Sources */,
 				A3EAB1CA2150073D008CDF28 /* Vertex.swift in Sources */,
+				A3EAB1CE21500C01008CDF28 /* Triangle.swift in Sources */,
 				A3D8652E214C1F13004D747A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
