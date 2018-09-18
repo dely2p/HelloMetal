@@ -13,12 +13,11 @@ class ViewController: UIViewController {
     
     var device: MTLDevice!
     var metalLayer: CAMetalLayer!
-    var objectToDraw: Triangle!
+    var objectToDraw: Cube!
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
     var timer: CADisplayLink!
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         device = MTLCreateSystemDefaultDevice()
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
         metalLayer.frame = view.layer.frame
         view.layer.addSublayer(metalLayer)
         
-        objectToDraw = Triangle(device: device)
+        objectToDraw = Cube(device: device)
         
         let defaultLibrary = device.makeDefaultLibrary()!
         let fragmentProgram = defaultLibrary.makeFunction(name: "basic_fragment")
