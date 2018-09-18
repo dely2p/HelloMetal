@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31861622150E08D00C1C19E /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31861612150E08D00C1C19E /* Cube.swift */; };
 		A3B52733214D72A200CE13A1 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B52731214D72A200CE13A1 /* Matrix4.m */; };
 		A3D8652E214C1F13004D747A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8652D214C1F13004D747A /* AppDelegate.swift */; };
 		A3D86530214C1F13004D747A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8652F214C1F13004D747A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A31861612150E08D00C1C19E /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		A3B52730214D72A100CE13A1 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3B52731214D72A200CE13A1 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
 		A3B52732214D72A200CE13A1 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A3EAB1C92150073D008CDF28 /* Vertex.swift */,
 				A3EAB1CB21500862008CDF28 /* Node.swift */,
 				A3EAB1CD21500C01008CDF28 /* Triangle.swift */,
+				A31861612150E08D00C1C19E /* Cube.swift */,
 			);
 			path = HelloMetal;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				A3B52733214D72A200CE13A1 /* Matrix4.m in Sources */,
 				A3D86530214C1F13004D747A /* ViewController.swift in Sources */,
 				A3EAB1CC21500862008CDF28 /* Node.swift in Sources */,
+				A31861622150E08D00C1C19E /* Cube.swift in Sources */,
 				A3EAB1CA2150073D008CDF28 /* Vertex.swift in Sources */,
 				A3EAB1CE21500C01008CDF28 /* Triangle.swift in Sources */,
 				A3D8652E214C1F13004D747A /* AppDelegate.swift in Sources */,
