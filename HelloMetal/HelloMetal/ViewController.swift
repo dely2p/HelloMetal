@@ -17,9 +17,13 @@ class ViewController: UIViewController {
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
     var timer: CADisplayLink!
+    var projectionMatrix : Matrix4!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        projectionMatrix = Matrix4.makePerspectiveViewAngle(Matrix4.degrees(toRad: 85.0), aspectRatio: Float(self.view.bounds.size.width / self.view.bounds.size.height), nearZ: 0.01, farZ: 100.0)
+
         device = MTLCreateSystemDefaultDevice()
         
         metalLayer = CAMetalLayer ()
