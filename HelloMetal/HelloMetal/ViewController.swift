@@ -35,8 +35,10 @@ class ViewController: UIViewController {
         
         objectToDraw = Cube(device: device)
         
-        objectToDraw.positionX = -0.25
-        objectToDraw.rotationZ = Matrix4.degrees(toRad: 45)
+        objectToDraw.positionX = 0.0
+        objectToDraw.positionY =  0.0
+        objectToDraw.positionZ = -2.0
+        objectToDraw.rotationZ = Matrix4.degrees(toRad: 45);
         objectToDraw.scale = 0.5
         
         let defaultLibrary = device.makeDefaultLibrary()!
@@ -65,7 +67,7 @@ class ViewController: UIViewController {
 
     func render() {
         guard let drawable = metalLayer?.nextDrawable() else { return }
-        objectToDraw.render(commandQueue: commandQueue, pipelineState: pipelineState, drawable: drawable, clearColor: nil)
+        objectToDraw.render(commandQueue: commandQueue, pipelineState: pipelineState, drawable: drawable,projectionMatrix: projectionMatrix, clearColor: nil)
     }
 
     
