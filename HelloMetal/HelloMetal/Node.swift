@@ -62,6 +62,14 @@ class Node {
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
+        let nodeModelMatrix = self.modelMatrix()
+        guard let uniformBuffer = device.makeBuffer(length: MemoryLayout<Float>.size * Matrix4.numberOfElements(), options: []) else {
+            return
+        }
+        let bufferPointer = uniformBuffer.contents()
+        memcpy(bufferPointer, nodeModelMatrix.raw(), MemoryLayout<Float>.size * Matrix4.numberOfElements())
+        renderEncoder.setVertexBuffer(uniformBuffer, offset: 0, index: 1)
+        
         renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount,
                                      instanceCount: vertexCount/3)
         renderEncoder.endEncoding()
