@@ -18,6 +18,16 @@ class Node {
     var vertexCount: Int
     var vertexBuffer: MTLBuffer
     
+    var positionX: Float = 0.0
+    var positionY: Float = 0.0
+    var positionZ: Float = 0.0
+    
+    var rotationX: Float = 0.0
+    var rotationY: Float = 0.0
+    var rotationZ: Float = 0.0
+    var scale: Float     = 1.0
+
+    
     init(name: String, vertices: Array<Vertex>, device: MTLDevice){
         // 1
         var vertexData = Array<Float>()
@@ -51,6 +61,7 @@ class Node {
         }
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        
         renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount,
                                      instanceCount: vertexCount/3)
         renderEncoder.endEncoding()
@@ -59,6 +70,15 @@ class Node {
         commandBuffer.commit()
         
     }
+    
+    func modelMatrix() -> Matrix4 {
+        let matrix = Matrix4()
+        matrix.translate(positionX, y: positionY, z: positionZ)
+        matrix.rotateAroundX(rotationX, y: rotationY, z: rotationZ)
+        matrix.scale(scale, y: scale, z: scale)
+        return matrix
+    }
+
     
 }
 
