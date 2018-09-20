@@ -31,6 +31,10 @@ class ViewController: UIViewController {
         
         objectToDraw = Cube(device: device)
         
+        objectToDraw.positionX = -0.25
+        objectToDraw.rotationZ = Matrix4.degrees(toRad: 45)
+        objectToDraw.scale = 0.5
+        
         let defaultLibrary = device.makeDefaultLibrary()!
         let fragmentProgram = defaultLibrary.makeFunction(name: "basic_fragment")
         let vertexProgram = defaultLibrary.makeFunction(name: "basic_vertex")
